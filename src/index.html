@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="assets/images/new_birdflop_logo_large.png" type="image/x-icon">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.5.2/jscolor.min.js"></script> 
+    <script type="module" src="./index.ts"></script>
+    <link rel="stylesheet" href="./static/style.css">
+    <title>RGB Gradient Creator</title>
+  </head>
+
+  <body id="bg" class="container" style="font-family: Quicksand;">
+  
+    <div id="hexColorTemplate" style="display:none;">
+      <div class="row">
+        <label for="color-$NUM">Hex Color #$NUM</label>
+        <input class="form-control col-md-1 hexColor" id="color-$NUM" style="border-radius: 10px;" value="$VAL"
+               data-jscolor="{preset:'small dark', position:'right'}" oninput="javascript: updateOutputText(event)"
+               onchange="javascript: updateOutputText(event); localStorage.setItem(`color-#${$NUM}`, document.getElementById('color-$NUM').value)"/>
+      </div>
+    </div>
+    
+    <div id="content">
+      <h1 id="title">CraftYourTown | RGB Generator</h1>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2" style="padding-left: 0;">
+            <div id="hexColors" class="container-fluid">
+              <!-- Will be populated in JavaScript -->
+            </div>
+          </div>
+          <div class="col-md-10" style="padding-right: 0;">
+            <div class="container-fluid">
+              <div class="row">
+                <div id="output">
+                  <label id="label4" for="outputText">Output</label>
+                  <label id="graylabel2" class="gray" for="outputText" style="font-weight: normal;">Copy-paste this for RGB text!</label>
+                  <pre id="outputText" style="border-radius: 10px; white-space: pre-wrap; height: 70px; margin-right: 15px; font-family: MinecraftRegular; margin-bottom: 5px;"
+                       onclick="copyTextToClipboard(this.textContent);"></pre>
+                  <p id="error">This is more than 256 characters and may not fit in the chat box.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div id="coloredNick" class="minecraft"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-3" style="padding-left: 0;">
+                  <label for="nickname">Message</label>
+                  <input class="form-control" id="nickname" type="text" maxlength="100" placeholder="Your Text"
+                         value="craftyour.town" oninput="javascript: updateOutputText(event);"
+                         onchange="javascript: updateOutputText(event)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3" style="padding-left: 0;">
+                  <label for="output-format">Output Format</label>
+                  <select id="output-format"
+                          class="form-control"
+                          onchange="updateOutputText(event);">
+                    <option value='classic'>Default</option>
+                    <option value='miniMessage'>Chat</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <label for="numOfColors">Number of Colors</label>
+                <input class="form-control"
+                       style="width: 75px;"
+                       value="3" id="numOfColors" type="number" min="2" max="10"
+                       onchange="updateOutputText(event); toggleColors(this.value);"
+                       oninput="updateOutputText(event); toggleColors(this.value);"/>
+              </div>
+              <div class="row">
+                <div id="dbold">
+                  <input type="checkbox" id="bold" onclick="updateOutputText(event);"/>
+                  <label for="bold">Bold</label>
+                </div> 
+                <div id="ditalics">
+                  <input type="checkbox" id="italics" onclick="updateOutputText(event);"/>
+                  <label for="italics">Italic</label>
+                </div>
+                <div id="dunderline">
+                  <input type="checkbox" id="underline" onclick="updateOutputText(event);"/>
+                  <label for="underline">Underline</label>
+                </div>
+                <div id="dstrike">
+                  <input type="checkbox" id="strike" onclick="updateOutputText(event);"/>
+                  <label for="strike">Strikethrough</label>
+                </div>
+                <div id="appearance">
+                  <input type="checkbox" id="darkmode" onclick="darkMode();" checked></input>
+                  <label for="darkmode" style="margin-bottom: 0px;margin-top: 0px;"> Dark Mode</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </body>
+
+  <footer>
+    <p>RGB generator by <a href="https://github.com/gurrrrrrett3">gart</a>, <a href="https://github.com/Oli-idk">Oli</a>, and <a href="https://github.com/saboooor">Saboor</a></p>
+  </footer>
+</html>
