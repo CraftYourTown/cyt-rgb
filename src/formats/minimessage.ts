@@ -31,7 +31,7 @@ export default class MiniMessageFormat extends Format {
         }
 
         if (options.strikethrough) {
-            prefix += '<s>';
+            prefix += '<st>';
         }
 
         return prefix + string 
