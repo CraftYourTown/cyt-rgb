@@ -62,4 +62,12 @@ window.darkMode = () => {
 
 window.copyTextToClipboard = (text: string) => {
     window.navigator.clipboard.writeText(text);
+
+    const copyTextLabel = document.getElementById('graylabel2')!;
+    let originalText = copyTextLabel.innerText;
+    copyTextLabel.innerText = 'Copied!';
+    setTimeout(() => {
+        copyTextLabel.innerText = originalText;
+    }, 1000);
+
 }

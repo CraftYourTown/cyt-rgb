@@ -18,7 +18,7 @@ export default class Gradient {
     }
 
     public getColors(): string[] {
-        return this.colors;
+        return this.colors.map(c => c.toLowerCase());
     }
 
     public setRange(lower: number, upper: number): this {
