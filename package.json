@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buid": "npx vite build"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,5 @@
     "jscolor": "^0.3.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.11"
-  },
-  "dependencies": {
-    "install": "^0.13.0",
-    "npm": "^10.3.0"
   }
 }
