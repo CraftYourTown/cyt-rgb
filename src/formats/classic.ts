@@ -11,7 +11,7 @@ export default class ClassicFormat extends Format {
         let result = '';
 
         for (let i = 0; i < string.length; i++) {
-            result += `${colors[i]}${this.addFormattingOptions(string[i], options)}`
+            result += `&${colors[i]}${this.addFormattingOptions(string[i], options)}`
         }
 
         return result;
