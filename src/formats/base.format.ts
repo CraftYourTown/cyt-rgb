@@ -17,7 +17,7 @@ export default class Format {
             result += '&l';
         }
         if (options.italic) {
-            result += '&0';
+            result += '&o';
         }
         if (options.underline) {
             result += '&n';
