@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
-import ClassicFormat from './formats/classic';
-import MiniMessageFormat from './formats/minimessage';
+import LegacyFormat from './formats/legacy';
+import ChatFormat from './formats/chat';
 import DOMManager from './classes/domManager';
 import { FormatOptions } from './formats/base.format';
 
@@ -9,8 +9,8 @@ export const nickname = document.getElementById('nickname')! as HTMLInputElement
 export const coloredNick = document.getElementById('coloredNick')! as HTMLSpanElement;
 
 export const formats = {
-    classic: new ClassicFormat(),
-    miniMessage: new MiniMessageFormat(),
+    legacy: new LegacyFormat(),
+    chat: new ChatFormat(),
 }
 
 export const savedColors: string[] = [
@@ -34,12 +34,12 @@ window.showError = (show: boolean) => {
         document.getElementById('error')!.style.display = 'block';
         document.getElementById('outputText')!.style.height = '70px';
         document.getElementById('outputText')!.style.marginBottom = '5px';
-      } else {
+    } else {
         document.getElementById('error')!.style.display = 'none';
         document.getElementById('outputText')!.style.height = '95px';
         document.getElementById('outputText')!.style.marginBottom = '10px';
-      }
-} 
+    }
+}
 
 window.displayColoredName = (nickname: string, colors: string[]) => {
     const formatToggles: FormatOptions = {

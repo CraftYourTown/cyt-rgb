@@ -3,10 +3,10 @@ declare class JsColorType {
     presets: {
         [key: string]: {
             width: number;
-                position: string
-                previewPosition: string
-                previewSize: number
-                palette: string[]   
+            position: string
+            previewPosition: string
+            previewSize: number
+            palette: string[]
         }
     }
 
@@ -16,7 +16,7 @@ declare class JsColorType {
         previewPosition?: string;
         previewSize?: number;
         palette?: string[];
-    } | keyof JsColorType['presets'] | `${keyof JsColorType['presets']} ${keyof JsColorType['presets']}`) ;
+    } | keyof JsColorType['presets'] | `${keyof JsColorType['presets']} ${keyof JsColorType['presets']}`);
 
     public install(rootNode?: HTMLElement): boolean;
     public ready(fn: () => void): void;

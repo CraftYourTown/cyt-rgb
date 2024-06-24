@@ -1,9 +1,9 @@
 import Gradient from "../classes/gradient";
 import Format, { FormatOptions } from "./base.format";
 
-export default class MiniMessageFormat extends Format {
+export default class ChatFormat extends Format {
 
-    name: string = 'MiniMessage';
+    name: string = 'Chat';
     layout: string = '<gradient:#rrggbb:#rrggbb>';
 
     public override format(gradient: Gradient, string: string, options?: FormatOptions): string {
@@ -34,7 +34,7 @@ export default class MiniMessageFormat extends Format {
             prefix += '<st>';
         }
 
-        return prefix + string 
+        return prefix + string
     }
 
 
