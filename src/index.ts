@@ -45,7 +45,6 @@ window.displayColoredName = (nickname: string, colors: string[]) => {
     const formatToggles: FormatOptions = {
         bold: (document.getElementById('bold') as HTMLInputElement).checked,
         italic: (document.getElementById('italics') as HTMLInputElement).checked,
-        underline: (document.getElementById('underline') as HTMLInputElement).checked,
         strikethrough: (document.getElementById('strike') as HTMLInputElement).checked,
     }
 
